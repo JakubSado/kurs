@@ -1,0 +1,28 @@
+<select>
+    {{#each categories}}
+        <option>{{this}}</option> 
+    {{/each}}
+</select>
+
+<form action="/filtered">
+    <div id="names">
+        {{#each names}}
+            <label>
+                <input name="f" type="radio" value="{{this}}">
+                {{this}}
+            </label>
+        {{/each}}
+        
+    </div>
+</form>
+
+<table>
+    <tr>
+        <th>nazwa</th>
+        <th>kategoria</th>
+        <th>cena</th>
+    </tr>
+    {{#each books}}
+        {{>book}}
+    {{/each}}
+</table>
